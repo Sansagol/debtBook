@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DebtBookSupport
+namespace DebtBook.Entities
 {
     /// <summary>
     /// Class describe a single debt entity.
@@ -19,9 +19,18 @@ namespace DebtBookSupport
 
         public DateTime DateBegin { get; set; }
 
+        public Debtor CurrentDebtor { get; set; }
+
+        public string Details { get { return this.ToString(); } }
+
         public Debt()
         {
             DateBegin = DateTime.Now;
+        }
+
+        public override string ToString()
+        {
+            return string.Format($"{Value} * {Rate}%");
         }
     }
 }

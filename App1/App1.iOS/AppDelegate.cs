@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace App1.iOS
+namespace DebtBook.iOS
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the 
 	// User Interface of the application, as well as listening (and optionally responding) to 
@@ -23,7 +23,7 @@ namespace App1.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init ();
-			LoadApplication (new App1.App ());
+			LoadApplication (new DebtBook.App ());
 
 			return base.FinishedLaunching (app, options);
 		}

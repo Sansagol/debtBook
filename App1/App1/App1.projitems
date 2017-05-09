@@ -6,16 +6,25 @@
     <SharedGUID>7538e5a4-db82-42d3-a136-118312839d71</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>App1</Import_RootNamespace>
+    <Import_RootNamespace>DebtBook</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)EditDebtor\DebtorEditorView.xaml.cs">
+      <DependentUpon>DebtorEditorView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Debt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Debtor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Main\MainModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Main\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Main\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PageFactory\BasePageFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageFactory\IPageFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RelationCommand.cs" />
   </ItemGroup>
@@ -25,6 +34,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)EditDebtor\DebtorEditorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

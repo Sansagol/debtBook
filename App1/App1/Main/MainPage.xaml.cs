@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace App1
+namespace DebtBook.Main
 {
 	public partial class MainPage : ContentPage
 	{
-		public MainPage()
+		public MainPage(ViewModelBase vm)
 		{
 			InitializeComponent();
-            
-
+            vm.Navigator = Navigation;
+            BindingContext = vm;
         }
 	}
 }

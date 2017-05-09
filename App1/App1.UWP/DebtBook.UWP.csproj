@@ -7,8 +7,8 @@
     <ProjectGuid>{09B1AD25-2FC6-4AD6-96A4-F0866C71D991}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>App1.UWP</RootNamespace>
-    <AssemblyName>App1.UWP</AssemblyName>
+    <RootNamespace>DebtBook.UWP</RootNamespace>
+    <AssemblyName>DebtBook.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>

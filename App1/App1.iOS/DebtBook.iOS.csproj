@@ -8,9 +8,9 @@
     <ProjectGuid>{3429687E-CA33-446C-B08E-D4287E1EFE43}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>App1.iOS</RootNamespace>
+    <RootNamespace>DebtBook.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>App1.iOS</AssemblyName>
+    <AssemblyName>DebtBook.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>

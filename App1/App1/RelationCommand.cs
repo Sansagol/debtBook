@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace App1
+namespace DebtBook
 {
     class RelationCommand : ICommand
     {

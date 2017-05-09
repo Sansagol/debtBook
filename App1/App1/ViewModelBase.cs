@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
-namespace App1
+namespace DebtBook
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+        public INavigation Navigator { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public virtual void OnPropertyChanged(string propertyName)
