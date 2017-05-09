@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1.Main"
+             x:Class="App1.MainPage">
+    <ContentPage.BindingContext>
+        <local:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label Grid.Row="0" Grid.Column="0"
+               Text="Имя"/>
+        <Editor Grid.Row="0" Grid.Column="1"
+                Margin="10"
+                BackgroundColor="Wheat"
+               Text="{Binding DebtorName, Mode=TwoWay}"/>
+
+        <Label Grid.Row="1" Grid.Column="0"
+               Text="Долг"/>
+        <Entry Grid.Row="1" Grid.Column="1"
+               BackgroundColor="Wheat"
+               Keyboard="Numeric"
+               Text="{Binding Debt, Mode=TwoWay}"/>
+
+        <Label Grid.Row="2" Grid.Column="0"
+               Text="%"/>
+        <Entry Grid.Row="2" Grid.Column="1"
+               BackgroundColor="Wheat"
+               Keyboard="Numeric"
+               Text="{Binding DebtPersent, Mode=TwoWay}"/>
+
+        <StackLayout Grid.Row="3" Grid.ColumnSpan="2"
+                     Orientation="Horizontal">
+            <Button Text="ADD"
+                    Command="{Binding AddNewDebtor}"/>
+            <Button Text="Clear"/>
+        </StackLayout>
+
+        <ListView Grid.Row="4" Grid.ColumnSpan="2"
+                  ItemsSource="{Binding Debtors}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}">
+                        <TextCell.Detail>
+                            <MultiBinding StringFormat="{}{0} x {1}%">
+                                <Binding Path="Debt" />
+                                <Binding Path="DebtPersent" />
+                            </MultiBinding>
+                        </TextCell.Detail>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
