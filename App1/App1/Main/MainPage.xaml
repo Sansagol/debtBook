@@ -30,30 +30,37 @@
                Text="{Binding DebtorName, Mode=TwoWay}"/>
         <Button Grid.Row="0" Grid.Column="2"
                 Text="+"
-                Command="{Binding AddDebtorCmd}"/>
+                Margin="10"
+                Command="{Binding AddDebtorCmd}">          
+        </Button>
 
         <Label Grid.Row="1" Grid.Column="0"
                Text="Долг"/>
         <Entry Grid.Row="1" Grid.Column="1"
+               Grid.ColumnSpan="2"
                BackgroundColor="Wheat"
                Keyboard="Numeric"
+               Margin="10"
                Text="{Binding Debt, Mode=TwoWay}"/>
 
         <Label Grid.Row="2" Grid.Column="0"
                Text="%"/>
         <Entry Grid.Row="2" Grid.Column="1"
+               Grid.ColumnSpan="2"
                BackgroundColor="Wheat"
                Keyboard="Numeric"
+               Margin="10"
+               WidthRequest="50"
                Text="{Binding DebtPersent, Mode=TwoWay}"/>
 
-        <StackLayout Grid.Row="3" Grid.ColumnSpan="2"
+        <StackLayout Grid.Row="3" Grid.ColumnSpan="3"
                      Orientation="Horizontal">
             <Button Text="ADD"
                     Command="{Binding AddNewDebtor}"/>
             <Button Text="Clear"/>
         </StackLayout>
 
-        <ListView Grid.Row="4" Grid.ColumnSpan="2"
+        <ListView Grid.Row="4" Grid.ColumnSpan="3"
                   ItemsSource="{Binding Debts}"
                   BackgroundColor="Black">
             <ListView.ItemTemplate>
