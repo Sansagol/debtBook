@@ -10,7 +10,19 @@ namespace DebtBook
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
-        public INavigation Navigator { get; set; }
+        private INavigation _Navigator = null;
+        public INavigation Navigator
+        {
+            get { return _Navigator; }
+            set
+            {
+                if (_Navigator != value)
+                {
+                    _Navigator = value;
+                    OnPropertyChanged(nameof(Navigator));
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

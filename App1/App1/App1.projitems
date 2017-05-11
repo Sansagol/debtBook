@@ -12,10 +12,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)EditDebtor\DebtorEditorModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EditDebtor\DebtorEditorView.xaml.cs">
       <DependentUpon>DebtorEditorView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)EditDebtor\DebtorEditorViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Debt.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Debtor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Main\MainModel.cs" />

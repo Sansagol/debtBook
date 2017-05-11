@@ -11,6 +11,8 @@ namespace DebtBook.Main
 {
     public class MainViewModel : ViewModelBase
     {
+        private MainModel _Model = null;
+
         public ICommand AddNewDebtor { get; set; }
         public ICommand AddDebtorCmd { get; set; }
 
@@ -62,8 +64,22 @@ namespace DebtBook.Main
 
         public MainViewModel(MainModel model)
         {
+            _Model = model ?? throw new ArgumentNullException(nameof(model));
+
+            PropertyChanged += MainViewModel_PropertyChanged;
+
             AddNewDebtor = new Command(AddDebtorHandler);
             AddDebtorCmd = new Command(ShowEditDebtorPage);
+        }
+
+        private void MainViewModel_PropertyChanged(
+            object sender, 
+            System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName.Equals(nameof(Navigator)) && Navigator!=null)
+            {
+                _Model.Initialize(Navigator);
+            }
         }
 
         private void AddDebtorHandler(object obj)
@@ -84,7 +100,7 @@ namespace DebtBook.Main
 
         private void ShowEditDebtorPage(object obj)
         {
-            Navigator.PushAsync(new DebtorEditorView());
+            _Model.ShowAddNewDebtor();
         }
     }
 }

@@ -9,12 +9,14 @@ using Xamarin.Forms.Xaml;
 
 namespace DebtBook.EditDebtor
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DebtorEditorView : ContentPage
-	{
-		public DebtorEditorView ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class DebtorEditorView : ContentPage
+    {
+        public DebtorEditorView(ViewModelBase vm)
+        {
+            InitializeComponent();
+            vm.Navigator = Navigation;
+            BindingContext = vm;
+        }
+    }
 }
