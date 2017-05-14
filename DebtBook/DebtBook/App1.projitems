@@ -12,17 +12,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)EditDebtor\DebtorEditorModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)EditDebtor\DebtorEditorView.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Core\IViewedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DebtorEditorModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DebtorEditorView.xaml.cs">
       <DependentUpon>DebtorEditorView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)EditDebtor\DebtorEditorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DebtorEditorViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Debt.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Debtor.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Main\MainModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Main\MainViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Main\MainPage.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MainModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)PageFactory\BasePageFactory.cs" />
@@ -31,7 +32,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)RelationCommand.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Main\MainPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -41,9 +42,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)EditDebtor\DebtorEditorView.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DebtorEditorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
   </ItemGroup>
 </Project>

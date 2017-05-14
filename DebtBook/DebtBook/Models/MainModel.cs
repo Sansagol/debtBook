@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace DebtBook.Main
+namespace DebtBook.Models
 {
     public class MainModel
     {
         private INavigation _Navigation = null;
         private IPageFactory _PagesFactory = null;
+
+        public event Action<string> DebtorNameChanged;
 
         public MainModel(IPageFactory pageFactory)
         {
@@ -24,8 +26,13 @@ namespace DebtBook.Main
 
         public void ShowAddNewDebtor()
         {
-            var page = _PagesFactory.CreaeteANewDebtorPage();
+            var page = _PagesFactory.CreaeteANewDebtorPage(SetDebtorName);
             _Navigation.PushAsync(page);
+        }
+
+        private void SetDebtorName(string obj)
+        {
+            DebtorNameChanged?.Invoke(obj);
         }
 
         public void ShowEditDebtor(Debtor debtor)

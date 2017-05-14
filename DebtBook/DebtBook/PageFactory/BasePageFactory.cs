@@ -1,4 +1,6 @@
-﻿using DebtBook.EditDebtor;
+﻿using DebtBook.Models;
+using DebtBook.ViewModels;
+using DebtBook.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,10 +12,10 @@ namespace DebtBook.PageFactory
     {
         /// <summary>Create the edit debtor page.</summary>
         /// <returns>Created page.</returns>
-        public ContentPage CreaeteANewDebtorPage()
+        public ContentPage CreaeteANewDebtorPage(Action<string> setNameMethod)
         {
             DebtorEditorModel model = new DebtorEditorModel();
-            DebtorEditorViewModel vm = new DebtorEditorViewModel(model);
+            DebtorEditorViewModel vm = new DebtorEditorViewModel(model, setNameMethod);
             return new DebtorEditorView(vm);
         }
     }

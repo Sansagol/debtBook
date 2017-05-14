@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace DebtBook.Main
+namespace DebtBook.Views
 {
 	public partial class MainPage : ContentPage
 	{

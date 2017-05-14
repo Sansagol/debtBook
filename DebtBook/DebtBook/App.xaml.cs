@@ -1,5 +1,7 @@
-﻿using DebtBook.Main;
+﻿using DebtBook.Models;
 using DebtBook.PageFactory;
+using DebtBook.ViewModels;
+using DebtBook.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -3,20 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DebtBook", "App1\App1\DebtBook.shproj", "{7538E5A4-DB82-42D3-A136-118312839D71}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DebtBook", "DebtBook\DebtBook\DebtBook.shproj", "{7538E5A4-DB82-42D3-A136-118312839D71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebtBook.Android", "App1\App1.Android\DebtBook.Android.csproj", "{A2EF0DCC-F678-4621-BCD1-708C9088D93D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebtBook.Android", "DebtBook\DebtBook.Android\DebtBook.Android.csproj", "{A2EF0DCC-F678-4621-BCD1-708C9088D93D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebtBook.iOS", "App1\App1.iOS\DebtBook.iOS.csproj", "{3429687E-CA33-446C-B08E-D4287E1EFE43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebtBook.iOS", "DebtBook\DebtBook.iOS\DebtBook.iOS.csproj", "{3429687E-CA33-446C-B08E-D4287E1EFE43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebtBook.UWP", "App1\App1.UWP\DebtBook.UWP.csproj", "{09B1AD25-2FC6-4AD6-96A4-F0866C71D991}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebtBook.UWP", "DebtBook\DebtBook.UWP\DebtBook.UWP.csproj", "{09B1AD25-2FC6-4AD6-96A4-F0866C71D991}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		App1\App1\App1.projitems*{09b1ad25-2fc6-4ad6-96a4-f0866c71d991}*SharedItemsImports = 4
-		App1\App1\App1.projitems*{3429687e-ca33-446c-b08e-d4287e1efe43}*SharedItemsImports = 4
-		App1\App1\App1.projitems*{7538e5a4-db82-42d3-a136-118312839d71}*SharedItemsImports = 13
-		App1\App1\App1.projitems*{a2ef0dcc-f678-4621-bcd1-708c9088d93d}*SharedItemsImports = 4
+		DebtBook\DebtBook\App1.projitems*{09b1ad25-2fc6-4ad6-96a4-f0866c71d991}*SharedItemsImports = 4
+		DebtBook\DebtBook\App1.projitems*{3429687e-ca33-446c-b08e-d4287e1efe43}*SharedItemsImports = 4
+		DebtBook\DebtBook\App1.projitems*{7538e5a4-db82-42d3-a136-118312839d71}*SharedItemsImports = 13
+		DebtBook\DebtBook\App1.projitems*{a2ef0dcc-f678-4621-bcd1-708c9088d93d}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

@@ -1,5 +1,5 @@
-﻿using DebtBook.EditDebtor;
-using DebtBook.Entities;
+﻿using DebtBook.Entities;
+using DebtBook.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace DebtBook.Main
+namespace DebtBook.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
@@ -65,11 +65,17 @@ namespace DebtBook.Main
         public MainViewModel(MainModel model)
         {
             _Model = model ?? throw new ArgumentNullException(nameof(model));
+            _Model.DebtorNameChanged += _Model_DebtorNameChanged;
 
             PropertyChanged += MainViewModel_PropertyChanged;
 
             AddNewDebtor = new Command(AddDebtorHandler);
             AddDebtorCmd = new Command(ShowEditDebtorPage);
+        }
+
+        private void _Model_DebtorNameChanged(string obj)
+        {
+            DebtorName = obj;
         }
 
         private void MainViewModel_PropertyChanged(

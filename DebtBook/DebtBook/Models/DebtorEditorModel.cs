@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DebtBook.EditDebtor
+namespace DebtBook.Models
 {
     class DebtorEditorModel
     {
