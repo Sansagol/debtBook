@@ -9,22 +9,22 @@ using Android.OS;
 
 namespace DebtBook.Droid
 {
-	[Activity (Label = "DebtBook", Icon = "@drawable/icon",
-               Theme="@style/MainTheme",
-               MainLauncher = true, 
+    [Activity(Label = "DebtBook", Icon = "@drawable/icon",
+               Theme = "@style/MainTheme",
+               MainLauncher = true,
                ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-	{
-		protected override void OnCreate (Bundle bundle)
-		{
-			TabLayoutResource = Resource.Layout.Tabbar;
-			ToolbarResource = Resource.Layout.Toolbar; 
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
-			base.OnCreate (bundle);
+            base.OnCreate(bundle);
 
-			global::Xamarin.Forms.Forms.Init (this, bundle);
-			LoadApplication (new DebtBook.App ());
-		}
-	}
+            global::Xamarin.Forms.Forms.Init(this, bundle);
+            LoadApplication(new DebtBook.App());
+        }
+    }
 }
 

@@ -14,6 +14,8 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Core\IViewedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\DebtorEditorModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DebtorsListModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DebtorsListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\DebtorEditorView.xaml.cs">
       <DependentUpon>DebtorEditorView.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -23,6 +25,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Debtor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MainModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DebtorsList.xaml.cs">
+      <DependentUpon>DebtorsList.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -48,6 +54,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DebtorsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
