@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebtBook.UWP", "DebtBook\De
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		DebtBook\DebtBook\App1.projitems*{09b1ad25-2fc6-4ad6-96a4-f0866c71d991}*SharedItemsImports = 4
-		DebtBook\DebtBook\App1.projitems*{3429687e-ca33-446c-b08e-d4287e1efe43}*SharedItemsImports = 4
 		DebtBook\DebtBook\App1.projitems*{7538e5a4-db82-42d3-a136-118312839d71}*SharedItemsImports = 13
 		DebtBook\DebtBook\App1.projitems*{a2ef0dcc-f678-4621-bcd1-708c9088d93d}*SharedItemsImports = 4
 	EndGlobalSection
