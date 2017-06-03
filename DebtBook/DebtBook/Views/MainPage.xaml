@@ -28,19 +28,19 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <StackLayout Orientation="Horizontal"
                          Grid.Row="0"
                          Grid.ColumnSpan="2">
-                <Button 
-                    Text="Debtors"
-                    Margin="10"
-                    Command="{Binding AddDebtorCmd}">
+                <Button Text="Debtors"
+                        Margin="10"
+                        Command="{Binding AddDebtorCmd}">
                 </Button>
-                <Button Text="Add Debt"
+                <Button Text="Add Debt"                        
+                        Margin="10"
                         Command="{Binding AddNewDebtor}"/>
-                <Button Text="Clear"/>
             </StackLayout>
 
 
@@ -52,8 +52,12 @@
                     x:Name="DebtorNameEdit"
                     Text="{Binding DebtorName, Mode=TwoWay}">
             </Editor>
+            <Button Grid.Row="1" Grid.Column="2"
+                    Text="Clear"
+                    VerticalOptions="Center"
+                    Command="{Binding ClearDebtorNameCmd}"/>
 
-            <ListView Grid.Row="4" Grid.ColumnSpan="3"
+            <ListView Grid.Row="2" Grid.ColumnSpan="3"
                   ItemsSource="{Binding Debts}"
                   BackgroundColor="Black">
                 <ListView.ItemTemplate>

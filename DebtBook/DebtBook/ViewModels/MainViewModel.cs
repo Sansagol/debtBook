@@ -16,7 +16,7 @@ namespace DebtBook.ViewModels
         /// <summary>Open view with debtors list.</summary>
         public ICommand DebtorsListCmd { get; set; }
         public ICommand AddDebtCmd { get; set; }
-        
+        public ICommand ClearDebtorNameCmd { get; set; }
 
         private ObservableCollection<Debt> _Debts = new ObservableCollection<Entities.Debt>();
         public ObservableCollection<Debt> Debts { get { return _Debts; } }
@@ -74,6 +74,7 @@ namespace DebtBook.ViewModels
 
             AddDebtCmd = new Command(AddDebtHandler);
             DebtorsListCmd = new Command(SbowDebtorsList);
+            ClearDebtorNameCmd = new Command(ClearDebtorName);
         }
 
         private void _Model_DebtorNameChanged(string obj)
@@ -111,5 +112,11 @@ namespace DebtBook.ViewModels
         {
             _Model.ShowSelectionDebtorPage();
         }
+
+        private void ClearDebtorName(object obj)
+        {
+            DebtorName = string.Empty;
+        }
+
     }
 }
