@@ -23,62 +23,35 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
+            <StackLayout Orientation="Horizontal"
+                         Grid.Row="0"
+                         Grid.ColumnSpan="2">
+                <Button 
+                    Text="Debtors"
+                    Margin="10"
+                    Command="{Binding AddDebtorCmd}">
+                </Button>
+                <Button Text="Add Debt"
+                        Command="{Binding AddNewDebtor}"/>
+                <Button Text="Clear"/>
+            </StackLayout>
 
-            <Label Grid.Row="0" Grid.Column="0"
+
+            <Label Grid.Row="1" Grid.Column="0"
                    Text="Имя"/>
-            <!--<autocomplete:SfAutoComplete 
-            Grid.Row="0" Grid.Column="1"
-            Margin="10"
-            HeightRequest="40"
-	        Text="{Binding DebtorName, Mode=TwoWay}"/>-->
-            <Editor Grid.Row="0" Grid.Column="1"
+            <Editor Grid.Row="1" Grid.Column="1"
                     Style="{StaticResource entryStyle}"
                     HorizontalOptions="Fill"
                     x:Name="DebtorNameEdit"
                     Text="{Binding DebtorName, Mode=TwoWay}">
             </Editor>
-            <Button Grid.Row="0" Grid.Column="2"
-                    Text="+"
-                    Margin="10"
-                    Command="{Binding AddDebtorCmd}">
-            </Button>
-
-            <Label Grid.Row="1" Grid.Column="0"
-                   Text="Долг"/>
-            <Entry Grid.Row="1" Grid.Column="1"
-                   Grid.ColumnSpan="2"
-                   Style="{StaticResource entryStyle}"
-                   Keyboard="Numeric"
-                   WidthRequest="100"
-                   Text="{Binding Debt, Mode=TwoWay}">
-
-            </Entry>
-
-            <Label Grid.Row="2" Grid.Column="0"
-               Text="%"/>
-            <Entry Grid.Row="2" Grid.Column="1"
-                   Grid.ColumnSpan="2"
-                   Style="{StaticResource entryStyle}"
-                   Keyboard="Numeric"
-                   WidthRequest="50"
-                   Text="{Binding DebtPersent, Mode=TwoWay}"/>
-
-            <StackLayout Grid.Row="3" Grid.ColumnSpan="3"
-                         Orientation="Horizontal">
-                <Button Text="ADD"
-                    Command="{Binding AddNewDebtor}"/>
-                <Button Text="Clear"/>
-            </StackLayout>
 
             <ListView Grid.Row="4" Grid.ColumnSpan="3"
                   ItemsSource="{Binding Debts}"

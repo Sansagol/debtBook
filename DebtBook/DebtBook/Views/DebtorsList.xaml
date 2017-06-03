@@ -14,13 +14,6 @@
                 <behav:EventToCommand EventName="TextChanged"
                                       Command="{Binding DebtorNameChangedCommand}"/>
             </Entry.Behaviors>
-            <!--<b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SayHelloCommand}" EventArgsConverter="{StaticResource ItemTappedConverter}" />-->
-            <!--<b:Interaction.Behaviors>
-                <b:BehaviorCollection>
-                    <b:EventToCommand EventName="TextChanged"
-                                      Command="{Binding DebtorNameChangedCommand}" />
-                </b:BehaviorCollection>
-            </b:Interaction.Behaviors>-->
         </Entry>
         <ListView Grid.Row="1"
                   ItemsSource="{Binding Debtors}"/>

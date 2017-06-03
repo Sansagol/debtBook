@@ -27,15 +27,16 @@ namespace DebtBook.ViewModels
                 }
             }
         }
+        private SelectionItem _AddDebtorItem = null;
 
-        private ObservableCollection<Debtor> _Debtors = new ObservableCollection<Debtor>();
-        public ObservableCollection<Debtor> Debtors { get { return _Debtors; } }
+        private ObservableCollection<SelectionItem> _Debtors = new ObservableCollection<SelectionItem>();
+        public ObservableCollection<SelectionItem> Debtors { get { return _Debtors; } }
         #endregion
 
         #region Commands
         public ICommand DebtorNameChangedCommand { get; set; }
 
-        public ICommand CreateDebtorCommand { get; set; }
+        public ICommand SelectedItemTappedCommand { get; set; }
         #endregion
 
         public DebtorsListViewModel(DebtorsListModel model)
@@ -45,18 +46,40 @@ namespace DebtBook.ViewModels
 
             _Model = model;
             DebtorNameChangedCommand = new Command(DebtorNameChangedHandler);
-            CreateDebtorCommand = new Command(CreateDebtor);
+            SelectedItemTappedCommand = new Command(SelectedItemTaped);
+
+            _AddDebtorItem = new SelectionItem()
+            {
+                Title = "Add new debtor",
+                CommandHandler = delegate
+                {
+                    CreateNewDebtor();
+                }
+            };
         }
 
         private void DebtorNameChangedHandler(object obj)
         {
             _Debtors.Clear();
-            _Model.GetDebtorsByName(SelectedDebtorName).ForEach(dn => _Debtors.Add(dn));
+            List<Debtor> debtors = _Model.GetDebtorsByName(SelectedDebtorName);
+            foreach (var deb in debtors)
+            {
+                SelectionItem item = new SelectionItem()
+                {
+                    SourceObject = deb,
+                    Title = deb.Name
+                };
+                _Debtors.Add(item);
+            }
         }
 
-        private void CreateDebtor(object obj)
+        private void SelectedItemTaped(object obj)
         {
 
+        }
+
+        private void CreateNewDebtor()
+        {
         }
     }
 }

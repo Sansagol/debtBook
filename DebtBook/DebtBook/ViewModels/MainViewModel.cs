@@ -13,13 +13,15 @@ namespace DebtBook.ViewModels
     {
         private MainModel _Model = null;
 
-        public ICommand AddNewDebtor { get; set; }
-        public ICommand AddDebtorCmd { get; set; }
+        /// <summary>Open view with debtors list.</summary>
+        public ICommand DebtorsListCmd { get; set; }
+        public ICommand AddDebtCmd { get; set; }
+        
 
         private ObservableCollection<Debt> _Debts = new ObservableCollection<Entities.Debt>();
         public ObservableCollection<Debt> Debts { get { return _Debts; } }
 
-        private string _Debtorname = string.Empty;
+        /// <summary>Current debtot name, which now searching.</summary>
         public string DebtorName
         {
             get { return _Debtorname; }
@@ -33,6 +35,7 @@ namespace DebtBook.ViewModels
                 }
             }
         }
+        private string _Debtorname = string.Empty;
 
         private int _Debt = 0;
         public int Debt
@@ -69,8 +72,8 @@ namespace DebtBook.ViewModels
 
             PropertyChanged += MainViewModel_PropertyChanged;
 
-            AddNewDebtor = new Command(AddDebtorHandler);
-            AddDebtorCmd = new Command(ShowEditDebtorPage);
+            AddDebtCmd = new Command(AddDebtHandler);
+            DebtorsListCmd = new Command(SbowDebtorsList);
         }
 
         private void _Model_DebtorNameChanged(string obj)
@@ -88,7 +91,7 @@ namespace DebtBook.ViewModels
             }
         }
 
-        private void AddDebtorHandler(object obj)
+        private void AddDebtHandler(object obj)
         {
             if (!string.IsNullOrWhiteSpace(DebtorName) &&
                 Debt > 0)
@@ -104,7 +107,7 @@ namespace DebtBook.ViewModels
             }
         }
 
-        private void ShowEditDebtorPage(object obj)
+        private void SbowDebtorsList(object obj)
         {
             _Model.ShowSelectionDebtorPage();
         }

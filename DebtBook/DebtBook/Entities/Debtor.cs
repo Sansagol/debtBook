@@ -12,7 +12,7 @@ namespace DebtBook.Entities
 
         public string Name { get; set; }
 
-        /// <summary>Whet this debtor was added to DB.</summary>
+        /// <summary>When this debtor was added to DB.</summary>
         public DateTime DateAdded { get; set; }
 
         public string Phone { get; set; }
