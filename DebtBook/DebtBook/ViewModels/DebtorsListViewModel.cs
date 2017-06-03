@@ -33,9 +33,9 @@ namespace DebtBook.ViewModels
         #endregion
 
         #region Commands
-        ICommand DebtorNameChangedCommand { get; set; }
+        public ICommand DebtorNameChangedCommand { get; set; }
 
-        ICommand CreateDebtorCommand { get; set; }
+        public ICommand CreateDebtorCommand { get; set; }
         #endregion
 
         public DebtorsListViewModel(DebtorsListModel model)
@@ -56,7 +56,7 @@ namespace DebtBook.ViewModels
 
         private void CreateDebtor(object obj)
         {
-            
+
         }
     }
 }

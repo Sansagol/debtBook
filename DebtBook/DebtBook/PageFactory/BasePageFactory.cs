@@ -18,5 +18,12 @@ namespace DebtBook.PageFactory
             DebtorEditorViewModel vm = new DebtorEditorViewModel(model, setNameMethod);
             return new DebtorEditorView(vm);
         }
+
+        public ContentPage CreateDebtorsListPage()
+        {
+            DebtorsListModel model = new DebtorsListModel();
+            DebtorsListViewModel vm = new DebtorsListViewModel(model);
+            return new DebtorsList(vm);
+        }
     }
 }

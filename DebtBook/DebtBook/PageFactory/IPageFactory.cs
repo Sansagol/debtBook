@@ -8,5 +8,7 @@ namespace DebtBook.PageFactory
     public interface IPageFactory
     {
         ContentPage CreaeteANewDebtorPage(Action<string> setNameMethod);
+
+        ContentPage CreateDebtorsListPage();
     }
 }

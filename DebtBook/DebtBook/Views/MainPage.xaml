@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DebtBook.Main"
+             xmlns:behavs="clr-namespace:BehaviourItemsLibrary;assembly=BehaviourItemsLibrary"
              xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
              x:Class="DebtBook.Views.MainPage">
     <!--<ContentPage.BindingContext>
@@ -43,7 +44,9 @@
             <Editor Grid.Row="0" Grid.Column="1"
                     Style="{StaticResource entryStyle}"
                     HorizontalOptions="Fill"
-                    Text="{Binding DebtorName, Mode=TwoWay}"/>
+                    x:Name="DebtorNameEdit"
+                    Text="{Binding DebtorName, Mode=TwoWay}">
+            </Editor>
             <Button Grid.Row="0" Grid.Column="2"
                     Text="+"
                     Margin="10"

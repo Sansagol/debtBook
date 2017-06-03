@@ -30,6 +30,12 @@ namespace DebtBook.Models
             _Navigation.PushAsync(page);
         }
 
+        public void ShowSelectionDebtorPage()
+        {
+            var page = _PagesFactory.CreateDebtorsListPage();
+            _Navigation.PushAsync(page);
+        }
+
         private void SetDebtorName(string obj)
         {
             DebtorNameChanged?.Invoke(obj);

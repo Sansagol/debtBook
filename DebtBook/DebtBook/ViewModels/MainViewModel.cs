@@ -106,7 +106,7 @@ namespace DebtBook.ViewModels
 
         private void ShowEditDebtorPage(object obj)
         {
-            _Model.ShowAddNewDebtor();
+            _Model.ShowSelectionDebtorPage();
         }
     }
 }
